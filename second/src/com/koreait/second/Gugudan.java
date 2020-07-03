@@ -33,7 +33,18 @@ public class Gugudan {
 			System.out.println("-----------");
 		}
 	}
-
+	
+	public static String makeStarTriangle(int star) {
+		String str = "";
+		for (int i = 0; i < star; i++) {
+			for (int z = 0; z < i; z++) {
+				str += "*";
+			}
+			str += "\n";
+		}
+		return str;
+	}
+	
 	public static int sum(int... x1) {
 		int sum = 0;
 		for (int i = 0; i < x1.length; i++) {

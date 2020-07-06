@@ -8,9 +8,8 @@ public class CardDeck {
 
 	public CardDeck() {
 		init();
-		
 	}
-	private List<Card> getCardDeckArr() {
+	public List<Card> getCardDeckArr() {
 		return arr;
 	}
 	private void init() {
@@ -19,10 +18,15 @@ public class CardDeck {
 //				arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
 				String pattern = Card.PATTERNS[i];
 				String deno = getDeno(z);
-				Card c = new Card(pattern, deno);
+				int point = getPoint(z);
+				//Card클래스가 여기서 사용된다.
+				Card c = new Card(pattern, deno, point);
 				arr.add(c);
 			}
 		}
+	}
+	private int getPoint(int num) {
+		return num > 10 ? 10 : num;
 	}
 	private String getDeno(int num) {
 		switch (num) {
@@ -40,15 +44,19 @@ public class CardDeck {
 		}
 		return "";
 	}
-	
+	//카드 뽑기
 	public Card getCard() {
-		int r = (int)(Math.random()*arr.size());
+		int r = (int) (Math.random() * arr.size());
 		Card c = arr.get(r);
 		arr.remove(r);
 		return c;
 	}
+	//뽑고 남은 카드
+	public void remainsCard() {
+		System.out.println("-------덱에 남은 잔여 카드-------");
+		System.out.println(getCardDeckArr());
+	}
 }
-
 //	private void init() {
 //		for (int i = 0; i < Card.PATTERNS.length; i++) {
 //			for (int z = 1; z <= 13; z++) {

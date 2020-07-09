@@ -8,7 +8,6 @@ public class Menu {
 	
 	public Menu() {
 		init();
-		showMenus();
 	}
 	private void init() {
 		arr.add(new Americano());
@@ -25,7 +24,7 @@ public class Menu {
 		arr.add(new MenuItem(name, price));
 	}
 	//Menu 생성 시 메뉴 출력
-	private void showMenus() {
+	public void showMenus() {
 		System.out.println("----------Menu----------");
 		for (int i = 0; i < getArr().size(); i++) {
 			System.out.println((i+1)+". "+arr.get(i));

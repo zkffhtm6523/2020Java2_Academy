@@ -16,5 +16,7 @@ public class Cafe {
 		MenuItem choiceMenu = cus.order(menu);
 		//주문한 메뉴를 받고 만든 주소값(커피를 만들어서 잔에 담음)
 		Coffee coffee = bas.makeCoffee(choiceMenu);
+		
+		cus.drinkCoffee(coffee);
 	}
 }

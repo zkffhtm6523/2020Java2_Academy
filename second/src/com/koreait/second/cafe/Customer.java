@@ -25,4 +25,7 @@ public class Customer {
 		sc.close();
 		return mi;
 	}
+	public void drinkCoffee(Coffee coffee) {
+		System.out.println(coffee.getName()+"를 마신다."); 
+	}
 }

@@ -17,11 +17,10 @@ public class CardDeck {
 			for (int z = 1; z <= 13; z++) {
 //				arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
 				String pattern = Card.PATTERNS[i];
-				String deno = getDeno(z);
+				String deno = getDeno(z); //getDeno 메서드 받아옴
 				int point = getPoint(z);
-				//Card클래스가 여기서 사용된다.
-				Card c = new Card(pattern, deno, point);
-				arr.add(c);
+				Card c = new Card(pattern, deno, point);//Card클래스가 여기서 사용된다.
+				arr.add(c); //배열 추가
 			}
 		}
 	}
